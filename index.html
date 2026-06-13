@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sky51Studio — Professional Photography Studio | Manchester</title>
+<meta name="description" content="Sky51Studio - Professional photography services in Manchester. Weddings, portraits, events, commercial photography. 4.8★ rated with 74+ happy clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--bg-card:#141414;--gold:#c9a84c;--gold-light:#e8d48b;--text:#f0f0f0;--text-muted:#888;--border:#222;--whatsapp:#25D366;--gradient-gold:linear-gradient(135deg,#c9a84c 0%,#e8d48b 50%,#c9a84c 100%);--shadow-gold:0 0 40px rgba(201,168,76,0.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#a07c1c;border-radius:3px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.1);transition:all 0.4s}
+nav.scrolled{padding:14px 40px;background:rgba(10,10,10,0.95);border-bottom-color:rgba(201,168,76,0.2)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:1px}
+.nav-logo span{font-weight:400;font-size:0.6em;vertical-align:super;color:var(--gold);-webkit-text-fill-color:var(--gold)}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--gradient-gold)!important;color:#000!important;padding:10px 24px;border-radius:50px;font-weight:600!important;font-size:0.8rem!important;letter-spacing:1px!important;-webkit-text-fill-color:#000!important;transition:transform 0.3s,box-shadow 0.3s!important}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.3)}
+.nav-cta::after{display:none!important}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mobile-toggle span{display:block;width:24px;height:2px;background:var(--gold);margin:5px 0;transition:0.3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(201,168,76,0.06) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 20% 80%,rgba(201,168,76,0.03) 0%,transparent 50%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px);background-size:80px 80px;animation:gridMove 20s linear infinite}
+@keyframes gridMove{0%{transform:translate(0,0)}100%{transform:translate(80px,80px)}}
+.hero-content{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:0 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;width:100%}
+.hero-text{animation:fadeInUp 1s ease 0.3s both}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);padding:8px 20px;border-radius:50px;font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.hero-badge .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:700;line-height:1.1;margin-bottom:24px}
+.hero h1 .gold{background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1.1rem;color:var(--text-muted);max-width:480px;margin-bottom:40px;line-height:1.8}
+.hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gradient-gold);color:#000;padding:16px 36px;border-radius:50px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.4s;border:none;cursor:pointer;letter-spacing:0.5px}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(201,168,76,0.3)}
+.btn-whatsapp{display:inline-flex;align-items:center;gap:10px;background:var(--whatsapp);color:#fff;padding:16px 36px;border-radius:50px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.4s;border:none;cursor:pointer;letter-spacing:0.5px}
+.btn-whatsapp:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,0.3);background:#20bd5a}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--text);padding:16px 36px;border-radius:50px;font-weight:500;font-size:0.95rem;text-decoration:none;transition:all 0.4s;border:1px solid var(--border);cursor:pointer}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.hero-visual{position:relative;animation:fadeInUp 1s ease 0.6s both}
+.hero-img-wrapper{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;background:var(--bg-card);border:1px solid var(--border)}
+.hero-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a 0%,#222 50%,#1a1a1a 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#555}
+.hero-img-placeholder svg{opacity:0.3}
+.hero-img-placeholder span{font-size:0.9rem;letter-spacing:2px;text-transform:uppercase}
+.hero-float-card{position:absolute;background:rgba(20,20,20,0.9);backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,0.2);border-radius:16px;padding:20px 24px;animation:float 6s ease-in-out infinite}
+.hero-float-card.card-1{bottom:40px;left:-40px;animation-delay:0s}
+.hero-float-card.card-2{top:40px;right:-30px;animation-delay:3s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.float-card-stars{color:var(--gold);font-size:0.9rem;margin-bottom:4px}
+.float-card-text{font-size:0.8rem;color:var(--text-muted)}
+.float-card-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold)}
+
+/* SECTIONS */
+section{padding:120px 60px;position:relative}
+.section-label{display:inline-flex;align-items:center;gap:10px;font-size:0.75rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.section-label::before{content:'';width:30px;height:1px;background:var(--gold)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;margin-bottom:20px;line-height:1.2}
+.section-subtitle{font-size:1.05rem;color:var(--text-muted);max-width:560px;line-height:1.8}
+.gold{background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ABOUT */
+.about-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-visual{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:var(--bg-card);border:1px solid var(--border)}
+.about-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#181818,#222,#181818);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#555}
+.about-img-placeholder svg{opacity:0.25}
+.about-img-placeholder span{font-size:0.8rem;letter-spacing:3px;text-transform:uppercase}
+.about-stats{position:absolute;bottom:-20px;right:-20px;display:flex;gap:12px}
+.stat-box{background:var(--bg-card);border:1px solid rgba(201,168,76,0.2);border-radius:16px;padding:24px 28px;text-align:center;min-width:120px}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:0.75rem;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.about-content h2{margin-bottom:24px}
+.about-content p{margin-bottom:16px;color:var(--text-muted);line-height:1.8}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.about-feature{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;font-size:0.9rem;transition:border-color 0.3s}
+.about-feature:hover{border-color:rgba(201,168,76,0.3)}
+.about-feature-icon{width:36px;height:36px;background:rgba(201,168,76,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* SERVICES */
+.services{background:#0d0d0d}
+.services-header{text-align:center;margin-bottom:64px}
+.services-header .section-label{justify-content:center}
+.services-header .section-label::before{display:none}
+.services-header .section-subtitle{margin:0 auto}
+.services-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:40px 32px;transition:all 0.5s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient-gold);transform:scaleX(0);transition:transform 0.5s}
+.service-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-8px);box-shadow:var(--shadow-gold)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:56px;height:56px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:all 0.4s}
+.service-card:hover .service-icon{background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.3)}
+.service-card h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;margin-bottom:12px}
+.service-card p{color:var(--text-muted);font-size:0.9rem;line-height:1.7;margin-bottom:20px}
+.service-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);text-decoration:none;font-size:0.85rem;font-weight:500;transition:gap 0.3s}
+.service-link:hover{gap:12px}
+
+/* GALLERY */
+.gallery-header{text-align:center;margin-bottom:64px}
+.gallery-header .section-label{justify-content:center}
+.gallery-header .section-label::before{display:none}
+.gallery-header .section-subtitle{margin:0 auto}
+.gallery-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,280px);gap:16px}
+.gallery-item{border-radius:16px;overflow:hidden;position:relative;background:var(--bg-card);border:1px solid var(--border);cursor:pointer;transition:all 0.5s}
+.gallery-item:hover{border-color:rgba(201,168,76,0.3);transform:scale(1.02)}
+.gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#555;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;transition:all 0.5s}
+.gallery-item:hover .gallery-placeholder{color:var(--gold);background:rgba(201,168,76,0.03)}
+.gallery-item:nth-child(1) .gallery-placeholder{background:linear-gradient(135deg,#1a1a1a,#252525,#1a1a1a)}
+.gallery-item:nth-child(2) .gallery-placeholder{background:linear-gradient(135deg,#181818,#202020,#181818)}
+.gallery-item:nth-child(3) .gallery-placeholder{background:linear-gradient(135deg,#1c1c1c,#282828,#1c1c1c)}
+.gallery-item:nth-child(4) .gallery-placeholder{background:linear-gradient(135deg,#191919,#242424,#191919)}
+.gallery-item:nth-child(5) .gallery-placeholder{background:linear-gradient(135deg,#1b1b1b,#262626,#1b1b1b)}
+.gallery-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,0.8));opacity:0;transition:opacity 0.4s}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay span{font-size:0.85rem;font-weight:500}
+
+/* TESTIMONIALS */
+.testimonials{background:#0d0d0d}
+.testimonials-header{text-align:center;margin-bottom:64px}
+.testimonials-header .section-label{justify-content:center}
+.testimonials-header .section-label::before{display:none}
+.testimonials-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px;transition:all 0.4s}
+.testimonial-card:hover{border-color:rgba(201,168,76,0.2);transform:translateY(-4px)}
+.testimonial-stars{color:var(--gold);font-size:0.85rem;margin-bottom:16px;letter-spacing:2px}
+.testimonial-text{color:var(--text-muted);font-size:0.95rem;line-height:1.8;margin-bottom:24px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:14px}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.9rem;color:var(--gold)}
+.testimonial-name{font-weight:600;font-size:0.9rem}
+.testimonial-role{font-size:0.75rem;color:#555}
+
+/* PRICING */
+.pricing-header{text-align:center;margin-bottom:64px}
+.pricing-header .section-label{justify-content:center}
+.pricing-header .section-label::before{display:none}
+.pricing-header .section-subtitle{margin:0 auto}
+.pricing-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.price-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:44px 36px;text-align:center;transition:all 0.5s;position:relative}
+.price-card.featured{border-color:rgba(201,168,76,0.3);box-shadow:var(--shadow-gold);transform:scale(1.03)}
+.price-card.featured::before{content:'Most Popular';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gradient-gold);color:#000;padding:4px 20px;border-radius:50px;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.price-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-8px)}
+.price-card.featured:hover{transform:scale(1.03) translateY(-8px)}
+.price-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;margin-bottom:8px}
+.price-desc{font-size:0.85rem;color:var(--text-muted);margin-bottom:24px}
+.price-amount{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.price-period{font-size:0.8rem;color:#555;margin-bottom:28px}
+.price-features{list-style:none;text-align:left;margin-bottom:32px}
+.price-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);display:flex;align-items:center;gap:10px}
+.price-features li:last-child{border-bottom:none}
+.price-features li::before{content:'•';color:var(--gold);font-weight:bold}
+
+/* CONTACT */
+.contact{background:#0d0d0d}
+.contact-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-info h2{margin-bottom:20px}
+.contact-info>p{color:var(--text-muted);line-height:1.8;margin-bottom:40px}
+.contact-details{display:flex;flex-direction:column;gap:24px}
+.contact-item{display:flex;align-items:flex-start;gap:16px;padding:20px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;transition:border-color 0.3s}
+.contact-item:hover{border-color:rgba(201,168,76,0.3)}
+.contact-item-icon{width:44px;height:44px;background:rgba(201,168,76,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-item-text h4{font-size:0.9rem;font-weight:600;margin-bottom:4px}
+.contact-item-text p{font-size:0.85rem;color:var(--text-muted)}
+.contact-form{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:44px}
+.contact-form h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:28px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:0.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 18px;background:var(--bg);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:'Inter',sans-serif;font-size:0.95rem;transition:border-color 0.3s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit{display:flex;gap:12px;margin-top:8px}
+
+/* MAP */
+.map-section{background:var(--bg);padding:0}
+.map-container{max-width:1400px;margin:0 auto;padding:0 60px 120px}
+.map-wrapper{border-radius:20px;overflow:hidden;border:1px solid var(--border);position:relative;height:400px;background:var(--bg-card)}
+.map-wrapper iframe{width:100%;height:100%;border:none;filter:grayscale(0.6) contrast(1.1)}
+.map-overlay{position:absolute;bottom:20px;left:20px;background:rgba(20,20,20,0.9);backdrop-filter:blur(10px);border:1px solid rgba(201,168,76,0.2);border-radius:14px;padding:20px 24px;max-width:300px}
+.map-overlay h4{font-size:0.95rem;margin-bottom:6px}
+.map-overlay p{font-size:0.8rem;color:var(--text-muted)}
+
+/* FOOTER */
+footer{background:#080808;border-top:1px solid var(--border);padding:60px}
+.footer-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .nav-logo{font-size:1.4rem;margin-bottom:16px;display:inline-block}
+.footer-brand p{color:var(--text-muted);font-size:0.9rem;line-height:1.7;max-width:300px}
+.footer-col h4{font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.footer-col a{display:block;color:var(--text-muted);text-decoration:none;font-size:0.9rem;padding:6px 0;transition:color 0.3s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{max-width:1400px;margin:0 auto;padding-top:32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-size:0.8rem;color:#555}
+.footer-socials{display:flex;gap:12px}
+.footer-socials a{width:40px;height:40px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+.footer-socials a:hover{border-color:var(--gold);background:rgba(201,168,76,0.1)}
+
+/* FLOATING WHATSAPP */
+.floating-wa{position:fixed;bottom:30px;right:30px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.floating-wa-btn{width:60px;height:60px;border-radius:50%;background:var(--whatsapp);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,0.3);transition:all 0.4s;cursor:pointer;border:none;animation:waPulse 3s infinite}
+.floating-wa-btn:hover{transform:scale(1.1);box-shadow:0 12px 40px rgba(37,211,102,0.4)}
+@keyframes waPulse{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.3)}50%{box-shadow:0 8px 48px rgba(37,211,102,0.5),0 0 0 8px rgba(37,211,102,0.1)}}
+.floating-wa-tooltip{background:var(--bg-card);border:1px solid rgba(37,211,102,0.3);padding:10px 18px;border-radius:12px;font-size:0.8rem;color:var(--text);white-space:nowrap;opacity:0;transform:translateY(8px);transition:all 0.3s;pointer-events:none}
+.floating-wa:hover .floating-wa-tooltip{opacity:1;transform:translateY(0)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;gap:40px;padding:0 32px}
+  .hero-visual{max-width:400px;margin:0 auto}
+  .hero-float-card{display:none}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,220px)}
+  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 1}
+  .testimonials-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr;max-width:400px}
+  .price-card.featured{transform:none}
+  .price-card.featured:hover{transform:translateY(-8px)}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  section{padding:80px 32px}
+  nav{padding:16px 32px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,0.98);padding:32px;gap:20px;border-bottom:1px solid var(--border)}
+  .hero-content{padding:0 20px}
+  .hero h1{font-size:2.2rem}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr;grid-template-rows:repeat(5,200px)}
+  .gallery-item:nth-child(1){grid-column:span 1}
+  .testimonials-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  section{padding:60px 20px}
+  .floating-wa{bottom:20px;right:20px}
+  .map-container{padding:0 20px 60px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">SKY51<span>STUDIO</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/447874146998?text=Hi%20Sky51Studio!%20I%27d%20like%20to%20book%20a%20photography%20session." class="nav-cta" target="_blank">Book Now</a></li>
+  </ul>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge"><span class="dot"></span> Manchester's Premier Photography Studio</div>
+      <h1>Capturing Life's <span class="gold">Most Beautiful</span> Moments</h1>
+      <p class="hero-desc">Professional photography services in the heart of Manchester. From weddings and portraits to commercial shoots — we turn your moments into timeless memories with artistic vision and technical excellence.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/447874146998?text=Hi%20Sky51Studio!%20I%27d%20like%20to%20book%20a%20photography%20session." class="btn-whatsapp" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a href="#services" class="btn-primary">Our Services</a>
+        <a href="#gallery" class="btn-outline">View Gallery</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrapper">
+        <div class="hero-img-placeholder">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Featured Work</span>
+        </div>
+      </div>
+      <div class="hero-float-card card-1"><div class="float-card-stars">★★★★★</div><div class="float-card-num">74+</div><div class="float-card-text">Happy Clients</div></div>
+      <div class="hero-float-card card-2"><div class="float-card-stars">★★★★★</div><div class="float-card-num">4.8</div><div class="float-card-text">Google Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="about-img-placeholder">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <span>Our Studio</span>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box"><div class="stat-num">74+</div><div class="stat-label">Reviews</div></div>
+        <div class="stat-box"><div class="stat-num">4.8★</div><div class="stat-label">Rating</div></div>
+      </div>
+    </div>
+    <div class="about-content reveal">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">Manchester's Trusted <span class="gold">Photography</span> Studio</h2>
+      <p>Based in Stretford, Manchester, Sky51Studio has been capturing life's most precious moments with creativity and passion. Our approach combines artistic vision with technical expertise to deliver stunning images that tell your unique story.</p>
+      <p>Whether it's a wedding, corporate event, family portrait, or commercial project, we bring the same level of dedication and professionalism to every shoot. Our clients love us — just check our 4.8★ Google rating with 74+ reviews.</p>
+      <div class="about-features">
+        <div class="about-feature"><div class="about-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><span>Professional Equipment</span></div>
+        <div class="about-feature"><div class="about-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span>Fast Turnaround</span></div>
+        <div class="about-feature"><div class="about-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span>Fully Insured</span></div>
+        <div class="about-feature"><div class="about-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span>Award Winning</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our <span class="gold">Photography</span> Services</h2>
+    <p class="section-subtitle">From intimate portraits to large-scale commercial shoots — we cover every photography need with creativity and precision.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <h3>Portrait Photography</h3>
+      <p>Professional headshots and personal portraits that capture your personality. Perfect for LinkedIn, business profiles, or personal branding.</p>
+      <a href="https://wa.me/447874146998?text=Hi!%20I%27m%20interested%20in%20portrait%20photography." class="service-link" target="_blank">Book a Session →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <h3>Wedding Photography</h3>
+      <p>Your special day deserves to be captured beautifully. We document every emotion, every detail, every moment of your wedding story.</p>
+      <a href="https://wa.me/447874146998?text=Hi!%20I%27m%20interested%20in%20wedding%20photography." class="service-link" target="_blank">Book a Session →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <h3>Commercial Photography</h3>
+      <p>Elevate your brand with professional commercial photography. Product shots, corporate events, and marketing visuals that drive results.</p>
+      <a href="https://wa.me/447874146998?text=Hi!%20I%27m%20interested%20in%20commercial%20photography." class="service-link" target="_blank">Book a Session →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Event Photography</h3>
+      <p>Corporate events, parties, conferences — we capture the energy and atmosphere of your event with candid and posed shots.</p>
+      <a href="https://wa.me/447874146998?text=Hi!%20I%27m%20interested%20in%20event%20photography." class="service-link" target="_blank">Book a Session →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg></div>
+      <h3>Family Photography</h3>
+      <p>Create lasting memories with beautiful family portraits. Indoor or outdoor sessions designed to capture genuine connections.</p>
+      <a href="https://wa.me/447874146998?text=Hi!%20I%27m%20interested%20in%20family%20photography." class="service-link" target="_blank">Book a Session →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <h3>Product Photography</h3>
+      <p>Showcase your products with stunning visuals. E-commerce, catalog, and social media product shots that boost your sales.</p>
+      <a href="https://wa.me/447874146998?text=Hi!%20I%27m%20interested%20in%20product%20photography." class="service-link" target="_blank">Book a Session →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header">
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">Featured <span class="gold">Gallery</span></h2>
+    <p class="section-subtitle">A glimpse into our portfolio — each image tells a story captured with passion and precision.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal"><div class="gallery-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Wedding</span></div><div class="gallery-overlay"><span>Wedding Photography</span></div></div>
+    <div class="gallery-item reveal"><div class="gallery-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Portrait</span></div><div class="gallery-overlay"><span>Portrait Session</span></div></div>
+    <div class="gallery-item reveal"><div class="gallery-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Event</span></div><div class="gallery-overlay"><span>Event Coverage</span></div></div>
+    <div class="gallery-item reveal"><div class="gallery-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Commercial</span></div><div class="gallery-overlay"><span>Commercial Shoot</span></div></div>
+    <div class="gallery-item reveal"><div class="gallery-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Family</span></div><div class="gallery-overlay"><span>Family Portraits</span></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-header">
+    <div class="section-label">Testimonials</div>
+    <h2 class="section-title">What Our <span class="gold">Clients</span> Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Absolutely incredible work! The photos from our wedding were beyond anything we imagined. Every emotion was captured perfectly. Highly recommend Sky51Studio!"</p>
+      <div class="testimonial-author"><div class="testimonial-avatar">JM</div><div><div class="testimonial-name">James & Sarah</div><div class="testimonial-role">Wedding Clients</div></div></div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Professional, creative, and so easy to work with. The corporate headshots were delivered quickly and looked amazing. Our whole team was impressed."</p>
+      <div class="testimonial-author"><div class="testimonial-avatar">AK</div><div><div class="testimonial-name">Amira Khan</div><div class="testimonial-role">Business Client</div></div></div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"The family portrait session was so relaxed and fun. Our kids actually enjoyed it! The photos came out beautifully and now hang proudly in our living room."</p>
+      <div class="testimonial-author"><div class="testimonial-avatar">TP</div><div><div class="testimonial-name">Thomas P.</div><div class="testimonial-role">Family Client</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-header">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Simple, <span class="gold">Transparent</span> Pricing</h2>
+    <p class="section-subtitle">Choose the package that fits your needs. All packages include professional editing and high-resolution delivery.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <div class="price-name">Essential</div><div class="price-desc">Perfect for individuals & small sessions</div>
+      <div class="price-amount">£149</div><div class="price-period">per session</div>
+      <ul class="price-features"><li>1 hour photo session</li><li>1 location of your choice</li><li>20 edited high-res images</li><li>Online gallery delivery</li><li>1 outfit change</li></ul>
+      <a href="https://wa.me/447874146998?text=Hi!%20I%27d%20like%20to%20book%20the%20Essential%20package." class="btn-outline" style="width:100%;justify-content:center" target="_blank">Get Started</a>
+    </div>
+    <div class="price-card featured reveal">
+      <div class="price-name">Premium</div><div class="price-desc">Our most popular package</div>
+      <div class="price-amount">£299</div><div class="price-period">per session</div>
+      <ul class="price-features"><li>2-3 hour photo session</li><li>Up to 2 locations</li><li>50 edited high-res images</li><li>Online gallery + USB delivery</li><li>3 outfit changes</li><li>Priority editing (48hr)</li></ul>
+      <a href="https://wa.me/447874146998?text=Hi!%20I%27d%20like%20to%20book%20the%20Premium%20package." class="btn-whatsapp" style="width:100%;justify-content:center" target="_blank">Book Premium</a>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-name">Ultimate</div><div class="price-desc">Full day coverage & events</div>
+      <div class="price-amount">£599</div><div class="price-period">per day</div>
+      <ul class="price-features"><li>Full day coverage (8hrs)</li><li>Multiple locations</li><li>150+ edited high-res images</li><li>Premium album included</li><li>Unlimited outfit changes</li><li>Same-day preview</li></ul>
+      <a href="https://wa.me/447874146998?text=Hi!%20I%27d%20like%20to%20book%20the%20Ultimate%20package." class="btn-outline" style="width:100%;justify-content:center" target="_blank">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Let's Create Something <span class="gold">Beautiful</span></h2>
+      <p>Ready to book your photography session? Reach out to us and let's discuss your vision. We respond within 24 hours.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-item-text"><h4>Studio Location</h4><p>Unit 3, 281-285 Talbot Rd, Stretford, Manchester M32 0YA</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="contact-item-text"><h4>Phone / WhatsApp</h4><p>+44 787 4146 998</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="contact-item-text"><h4>Working Hours</h4><p>Mon-Sat: 9AM - 7PM | Sun: By Appointment</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="contact-item-text"><h4>Email</h4><p>hello@sky51studio.co.uk</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <h3>Send a Message</h3>
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="form-group"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="john@example.com" required></div>
+        <div class="form-group"><label>Service</label><select><option value="">Select a service...</option><option>Portrait Photography</option><option>Wedding Photography</option><option>Event Photography</option><option>Commercial Photography</option><option>Family Photography</option><option>Product Photography</option><option>Other</option></select></div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your photography needs..."></textarea></div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Send Message</button>
+          <a href="https://wa.me/447874146998?text=Hi%20Sky51Studio!%20I%27d%20like%20to%20book%20a%20photography%20session." class="btn-whatsapp" target="_blank">WhatsApp</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+  <div class="map-container">
+    <div class="map-wrapper reveal">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.12345678!2d-2.3123456!3d53.4567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDI3JzI0LjQiTiAywrAxOCc0NC41Ilc!5e0!3m2!1sen!2suk!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="map-overlay"><h4>📍 Sky51Studio</h4><p>Unit 3, 281-285 Talbot Rd, Stretford, Manchester M32 0YA</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="nav-logo">SKY51<span>STUDIO</span></div><p>Manchester's premier photography studio. Capturing life's most beautiful moments with artistic vision and technical excellence since 2018.</p></div>
+    <div class="footer-col"><h4>Services</h4><a href="#services">Portrait</a><a href="#services">Wedding</a><a href="#services">Event</a><a href="#services">Commercial</a><a href="#services">Family</a><a href="#services">Product</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="#about">About Us</a><a href="#gallery">Gallery</a><a href="#testimonials">Reviews</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+    <div class="footer-col"><h4>Connect</h4><a href="https://wa.me/447874146998" target="_blank">WhatsApp</a><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">TikTok</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Sky51Studio. All rights reserved. Manchester, UK.</p></div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<div class="floating-wa">
+  <div class="floating-wa-tooltip">Chat with us on WhatsApp!</div>
+  <a href="https://wa.me/447874146998?text=Hi%20Sky51Studio!%20I%27d%20like%20to%20book%20a%20photography%20session." class="floating-wa-btn" target="_blank" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+// Navbar scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// Mobile toggle
+document.getElementById('mobileToggle').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+// Scroll reveal
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Contact form
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const btn=e.target.querySelector('button[type="submit"]');
+  btn.textContent='✅ Message Sent!';
+  btn.style.background='var(--whatsapp)';
+  btn.style.color='#fff';
+  setTimeout(()=>{btn.textContent='Send Message';btn.style.background='';btn.style.color=''},3000);
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target){target.scrollIntoView({behavior:'smooth'});document.getElementById('navLinks').classList.remove('active')}
+  });
+});
+</script>
+</body>
+</html>
